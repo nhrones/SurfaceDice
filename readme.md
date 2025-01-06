@@ -1,18 +1,20 @@
 
-# Surface Framework  
-## Canvas GUI  
+# Surface Canvas GUI Framework  
+https://github.com/nhrones/SurfaceGUI
+
 ## Dice Game Example
 
-Yes it's my same old poker-dice game you've all seen on many platforms.    
-Now, its back on my newly updated Surface framework!
+Yes it's my same-ol poker-dice game you've all seen on many platforms.    
+Now, its back on my newly updated Mini-Surface framework!
 
-Once again:
+Very Simple -> years in development:
   - Single DOM element! `<canvas>`
   - Ultra-fine-grained reactivity! `signals-aggregator`
   - Zero external dependencies -- none - nada
-  - Pure vanilla HTML, CSS, javescript
+  - Pure vanilla HTML, javescript
   - Bundled framework + view components ~25 KB
   - This example with framework + all media < 152 KB
+
 ## Performance
 Lighthouse has trouble measuring -> (too-fast?)   
 
