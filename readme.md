@@ -10,7 +10,13 @@ Once again:
   - Single DOM element! `<canvas>`
   - Ultra-fine-grained reactivity! `signals-aggregator`
   - Zero external dependencies -- none - nada
-  - Bundled framework with view components ~50k
+  - Pure vanilla HTML, CSS, javescript
+  - Bundled framework + view components ~25 KB
+  - This example with framework + all media < 152 KB
+## Performance
+To fast for lighthouse   
+
+![alt text](lighthouse.png)
 
 ## Usage:
 ```
