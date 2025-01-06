@@ -14,11 +14,12 @@ Once again:
   - Bundled framework + view components ~25 KB
   - This example with framework + all media < 152 KB
 ## Performance
-To fast for lighthouse   
+Lighthouse has trouble measuring -> (too-fast?)   
 
 ![alt text](lighthouse.png)
+First Contentful Paint is a little slow as I build all die-face images and audio contexts on startup. It seems then that lighthouse has little to measure!   
 
-## Usage:
+## Game Play:
 ```
 Click the 'Roll Button' to start.    
 After each roll of the dice, you can 'click' a die to 'freeze' its value.    
