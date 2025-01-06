@@ -18,9 +18,6 @@ __export(TextElem_exports, {
   default: () => TextElem
 });
 var TextElem = class {
-  static {
-    __name(this, "TextElem");
-  }
   id = 0;
   // N/A
   activeView = false;
@@ -108,7 +105,8 @@ var TextElem = class {
    * render this Text-View onto the canvas 
    */
   render() {
-    if (!ctx) return;
+    if (!ctx)
+      return;
     ctx.save();
     ctx.font = `${this.fontSize}px Tahoma, Verdana, sans-serif`;
     ctx.textAlign = this.textAlign;
@@ -167,12 +165,10 @@ var TextElem = class {
     this.render();
   }
 };
+__name(TextElem, "TextElem");
 
 // views/Button.js
 var Button = class {
-  static {
-    __name(this, "Button");
-  }
   id = 0;
   activeView = true;
   index = -1;
@@ -281,6 +277,7 @@ var Button = class {
     this.textNode.update();
   }
 };
+__name(Button, "Button");
 
 // views/CheckBox.js
 var CheckBox_exports = {};
@@ -288,9 +285,6 @@ __export(CheckBox_exports, {
   default: () => CheckBox
 });
 var CheckBox = class {
-  static {
-    __name(this, "CheckBox");
-  }
   id = 0;
   activeView = true;
   index = -1;
@@ -397,6 +391,7 @@ var CheckBox = class {
     ctx.restore();
   }
 };
+__name(CheckBox, "CheckBox");
 
 // views/Container.js
 var Container_exports = {};
@@ -406,9 +401,6 @@ __export(Container_exports, {
 
 // views/Scrollbar.js
 var Scrollbar = class {
-  static {
-    __name(this, "Scrollbar");
-  }
   container;
   mousePos = 0;
   dragging = false;
@@ -478,22 +470,22 @@ var Scrollbar = class {
   scroll(delta) {
     const { height, lineHeight, rowCapacity, top: top2 } = this.container;
     this.cursor.index -= delta;
-    if (this.cursor.index < 0) this.cursor.index = 0;
+    if (this.cursor.index < 0)
+      this.cursor.index = 0;
     const newTop = this.cursor.index * lineHeight;
     if (newTop + this.cursor.length >= height + top2) {
     } else {
       this.cursor.top = newTop;
     }
-    if (this.cursor.top < 0) this.cursor.top = 0;
+    if (this.cursor.top < 0)
+      this.cursor.top = 0;
     this.container.render();
   }
 };
+__name(Scrollbar, "Scrollbar");
 
 // views/Container.js
 var Container = class {
-  static {
-    __name(this, "Container");
-  }
   id = 0;
   activeView = true;
   index = 1;
@@ -574,6 +566,7 @@ var Container = class {
     }
   }
 };
+__name(Container, "Container");
 
 // views/Popup.js
 var Popup_exports = {};
@@ -583,9 +576,6 @@ __export(Popup_exports, {
 var left = 1;
 var top = 1;
 var Popup = class {
-  static {
-    __name(this, "Popup");
-  }
   id = 0;
   // assigned by activeViews.add() 
   index = -1;
@@ -684,7 +674,8 @@ var Popup = class {
   }
   /** update this virtual Popups view (render it) */
   update() {
-    if (this.visible) this.render();
+    if (this.visible)
+      this.render();
   }
   /** render this virtual Popup view */
   render() {
@@ -710,6 +701,7 @@ var Popup = class {
     this.visible = true;
   }
 };
+__name(Popup, "Popup");
 
 // views/TextArea.js
 var TextArea_exports = {};
@@ -732,9 +724,6 @@ var CHECKMARK = "\u2714";
 var caretChar = HAIRSPACE;
 var placeholder = "text";
 var TextArea = class extends Container {
-  static {
-    __name(this, "TextArea");
-  }
   id = 0;
   activeView = true;
   index = 1;
@@ -833,7 +822,8 @@ var TextArea = class extends Container {
             `;
         }
         const A = true;
-        if (A) console.log(` 
+        if (A)
+          console.log(` 
          focused: ${this.focused} insertionRow: ${this.insertionRow} 
          highlighted text: ${text.substring(this.selectStart, this.selectEnd)}
          selection -- start: ${this.selectStart}, end: ${this.selectEnd} 
@@ -875,7 +865,8 @@ var TextArea = class extends Container {
     }
     let lineNumber = 0;
     for (const line of this.lines) {
-      if (line.length <= 0) continue;
+      if (line.length <= 0)
+        continue;
       const textTop = this.location.top + this.lineHeight * (lineNumber + 1);
       if (this.showPlaceholder && this.focused === false) {
         ctx.fillStyle = "Gray";
@@ -887,7 +878,8 @@ var TextArea = class extends Container {
       } else {
         let txt2 = "";
         this.positionCaret(line.text);
-        if (line.hasSelection) this.renderHighlight(line);
+        if (line.hasSelection)
+          this.renderHighlight(line);
         txt2 = this.insertionRow === lineNumber ? this.trimmedLeft + caretChar + this.trimmedRight : line.text;
         ctx.fillStyle = this.fontColor;
         ctx.fillText(
@@ -929,6 +921,7 @@ var TextArea = class extends Container {
     );
   }
 };
+__name(TextArea, "TextArea");
 
 // base_manifest.js
 var baseManifest = {
@@ -1196,7 +1189,8 @@ function handleClickOrTouch(mX, mY) {
       }
     }
   }
-  if (!hit) clearFocused();
+  if (!hit)
+    clearFocused();
 }
 __name(handleClickOrTouch, "handleClickOrTouch");
 function clearFocused() {
@@ -1358,7 +1352,8 @@ function handleEditEvents(editor, evt) {
 }
 __name(handleEditEvents, "handleEditEvents");
 function getSelectedText(editor) {
-  if (editor.selectStart === 0 && editor.selectEnd === 0) return "";
+  if (editor.selectStart === 0 && editor.selectEnd === 0)
+    return "";
   return editor.fullText.substring(editor.selectStart, editor.selectEnd - 1);
 }
 __name(getSelectedText, "getSelectedText");
@@ -1479,9 +1474,6 @@ __name(charLines, "charLines");
 
 // viewModels/textEditor.js
 var TextEditor = class {
-  static {
-    __name(this, "TextEditor");
-  }
   /** an identity string shared with a View  */
   id = "";
   //================================
@@ -1545,7 +1537,6 @@ var TextEditor = class {
       }
       this.focused = true;
       switch (evt.code) {
-        // remove a character left
         case "Backspace":
           if (this.insertionColumn > 0 && this.insertionIndex > 0) {
             this.selectStart = this.insertionIndex - 1;
@@ -1564,8 +1555,6 @@ var TextEditor = class {
             this.resetSelectionState();
           }
           break;
-        // if we have a selection delete it
-        // else, delete one character to the right of the insertionColumn    
         case "Delete": {
           if (this.hasSelection() && shiftKey) {
             removeSelection(this);
@@ -1580,7 +1569,6 @@ var TextEditor = class {
           }
           break;
         }
-        // move down in view or select up
         case "ArrowDown":
           if (this.hasText() === true) {
             if (this.insertionRow < this.lines.length - 1) {
@@ -1612,7 +1600,6 @@ var TextEditor = class {
           }
           this.updateInsertionPoint(`Home Shift = ${shiftKey}`);
           break;
-        // the enter key will create -> move to a new line 
         case "Enter":
           insertChars(this, "\n");
           break;
@@ -1629,20 +1616,19 @@ var TextEditor = class {
           }
           this.updateInsertionPoint(`Home Shift = ${shiftKey}`);
           break;
-        // paste from clipboard
         case "Insert":
           if (shiftKey) {
             insertChars(this);
             this.refreshLines();
           }
           break;
-        // move left in viewport or select left
         case "ArrowLeft":
           if (this.insertionIndex > 0) {
             this.insertionColumn -= 1;
             if (this.insertionColumn < 0) {
               this.insertionRow -= 1;
-              if (this.insertionRow < 0) this.insertionRow = 0;
+              if (this.insertionRow < 0)
+                this.insertionRow = 0;
               this.insertionColumn = this.lines[this.insertionRow].length;
             }
             if (shiftKey) {
@@ -1657,7 +1643,6 @@ var TextEditor = class {
             this.updateInsertionPoint(`LeftArrow Shift = ${shiftKey}`);
           }
           break;
-        // move right or select right   
         case "ArrowRight": {
           if (this.insertionIndex < this.fullText.length) {
             this.insertionColumn += 1;
@@ -1684,7 +1669,6 @@ var TextEditor = class {
           this.updateInsertionPoint(`RightArrow Shift = ${shiftKey}`);
           break;
         }
-        // move up a row or select up
         case "ArrowUp":
           if (this.hasText() === true) {
             if (this.insertionRow > 0) {
@@ -1733,7 +1717,8 @@ var TextEditor = class {
     } else if (this.lines.length < originalLineCnt) {
       if (this.insertionRow > this.lines.length - 1) {
         this.insertionRow = this.lines.length - 1;
-        if (this.insertionRow < 0) this.insertionRow = 0;
+        if (this.insertionRow < 0)
+          this.insertionRow = 0;
       }
     }
     this.updateInsertionPoint("refreshLines", at);
@@ -1744,7 +1729,6 @@ var TextEditor = class {
    */
   updateInsertionPoint(from, insertAt = InsertAt.Calc) {
     switch (insertAt) {
-      // calculate and set index from row and column 
       case InsertAt.Calc: {
         for (const line of this.lines) {
           this.testForSelection(line);
@@ -1823,6 +1807,7 @@ var TextEditor = class {
     );
   }
 };
+__name(TextEditor, "TextEditor");
 export {
   Button_exports as Button,
   CARETBAR,
