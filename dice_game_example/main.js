@@ -4,7 +4,7 @@ import {
    initCloseButton, 
    containerInit, 
    hydrateUI, 
-   render 
+   renderAll 
 } from "./deps.js";
 
 import * as PlaySound from './viewModels/sounds.js'
@@ -57,4 +57,4 @@ export const thisPlayer = {
 appInstance.resetTurn()
 
 // Initial rendering of the UI
-render()
+renderAll() 

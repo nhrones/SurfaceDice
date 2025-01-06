@@ -4,7 +4,7 @@ export {
    addElement,
    containerInit, 
    hydrateUI, 
-   render
+   renderAll
 } from './render/uiContainer.js'
 
 /* activeNodes.js */

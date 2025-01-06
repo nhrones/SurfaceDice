@@ -34,7 +34,7 @@ export function containerInit(
 /** 
  * central render function 
  */
-export const render = () => {
+export const renderAll = () => {
    // refresh the view - render views
    renderNodes()
 }

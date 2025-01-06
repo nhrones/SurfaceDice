@@ -15,4 +15,4 @@ Have fun!
 ## NOTE: Try it
 
 
-Copyright 2022-2024, Nick D. Hrones, All rights are reserved.
+Copyright 2022-2025, Nick D. Hrones, All rights are reserved.
