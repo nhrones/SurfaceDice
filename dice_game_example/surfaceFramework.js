@@ -944,7 +944,7 @@ var baseManifest = {
 };
 var base_manifest_default = baseManifest;
 
-// events/signals.js
+// signals/signals.js
 var signals = buildSignalAggregator();
 function buildSignalAggregator() {
   const eventHandlers = /* @__PURE__ */ new Map();
@@ -1092,7 +1092,7 @@ var renderNodes = /* @__PURE__ */ __name(() => {
   }
 }, "renderNodes");
 
-// events/systemEvents.js
+// signals/systemEvents.js
 var left2 = 0;
 var x = 0;
 var y = 0;

@@ -31,8 +31,8 @@ export {
    windowCFG 
 } from './render/renderContext.js'
 
-export { signals, buildSignalAggregator } from './events/signals.js'
-export { initHostEvents } from './events/systemEvents.js'
+export { signals, buildSignalAggregator } from './signals/signals.js'
+export { initHostEvents } from './signals/systemEvents.js'
 
 /** Component ViewModels */
 export { initButton } from './viewModels/button.js'

@@ -1,6 +1,6 @@
 
 import { ctx, incrementTickCount } from './renderContext.js'
-import { signals } from '../events/signals.js'
+import { signals } from '../signals/signals.js'
 
 //===============================  activeNodes  ======================================
 //       

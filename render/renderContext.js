@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 import baseManifest from "../base_manifest.js"
-import { signals } from '../events/signals.js'
+import { signals } from '../signals/signals.js'
 
 /** 
  * Give access to the current window configuration 

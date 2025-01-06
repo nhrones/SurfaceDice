@@ -6,7 +6,7 @@ import {
    initCFG,
    setupRenderContext
 } from './renderContext.js'
-import { initHostEvents } from '../events/systemEvents.js'
+import { initHostEvents } from '../signals/systemEvents.js'
 
 /** 
  * our view factories 

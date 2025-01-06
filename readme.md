@@ -1,13 +1,16 @@
+
 # Surface Framework  
 ## Canvas GUI  
+## Dice Game Example
 
 Yes it's my same old poker-dice game you've all seen on many platforms.    
 Now, its back on my newly updated Surface framework!
 
 Once again:
-  - One DOM element
-  - Ultra-fine-grained reactivity!
+  - Single DOM element! `<canvas>`
+  - Ultra-fine-grained reactivity! `signals-aggregator`
   - Zero external dependencies -- none - nada
+  - Bundled framework with view components ~50k
 
 ## Usage:
 ```
@@ -21,4 +24,4 @@ Have fun!
 ## NOTE: Try it now!
 ## https://nhrones.github.io/SurfaceDice/
 
-Copyright 2022-2024, Nick D. Hrones, All rights are reserved.
+Copyright 2022-2025, Nick D. Hrones, All rights are reserved.
